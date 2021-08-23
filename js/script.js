@@ -26,7 +26,7 @@ function styleUC(feature) {
 				interactive: true,
 			};
 		}
-		else if (['COD', 'ZMB', 'MOZ', 'MWI', 'VNM'].includes(feature.properties['iso3'])) {
+		else if (['COD', 'ZMB', 'MOZ', 'MWI'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(89,85,88,0.8)',
 				fillOpacity: 0.7,
@@ -34,7 +34,7 @@ function styleUC(feature) {
 				interactive: true,
 			};
 		}
-		else if (['MAR'].includes(feature.properties['iso3'])) {
+		else if (['MAR', 'VNM', 'KEN'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(89,85,88,0.8)',
 				fillOpacity: 0.7,
@@ -59,10 +59,10 @@ function contentUC(feature,layer) {
 								<div style="display:inline-block;"><h1>&nbsp &nbsp Ghana Use Cases</h1></div>\
 								<hr size="1" width="100%" color="#a84f42">\
 								<h2>Current Use Cases</h2>\
-								<div style=display:inline-block;vertical-align:top;><img src="img/isdaxgha.png" width="75px"><h3><b>Testing hyperlocal digital agronomic advisory services and their delivery.</b></h3></div>\
-								<div style=display:inline-block;vertical-align:top;><img src="img/wcxgha.png" width="150px"><h3><b>Cropping calendar advisories for smallholder maize farmers and extension agents in the Guinea savannah zone.</b></h3></div>\
-								<h2>Advanced Use Cases</h2>\
-								<div style=display:inline-block;vertical-align:top;><img src="img/esokoxgha.png" width="150px"><h3><b>Ghana soil fertiliser advisory: Digital Fertilizer advisory & Agronomic advice.</b></h3></div>\
+								<h3><b>Testing hyperlocal digital agronomic advisory services and their delivery.</b></h3></div>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/worldcover.png" width="200px"><h3><b>Cropping calendar advisories for smallholder maize farmers and extension agents in the Guinea savannah zone.</b></h3></div>\
+								<h2>Use Cases in Development</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/esoko.png" width="200px"><h3><b>Ghana soil fertiliser advisory: Digital Fertilizer advisory & Agronomic advice.</b></h3></div>\
 								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
@@ -70,91 +70,153 @@ function contentUC(feature,layer) {
 		}
 		else if (['NGA'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>SAA Nigeria: </b>Co-development of digital solutions to deliver fertilizer recommendations and time of planting advice for rice, maize and cassava.</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/nga.png" width="100px" heigth="200px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Nigeria Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/saaxnga.png" width="150px"><h3><b>Co-development of digital solutions to deliver fertilizer recommendations and time of planting advice for rice, maize and cassava.</b></h3></div>\
+								<h2>Use Cases in finalization of due dilligence</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/mercy.png" width="150px"><h3><b>Decision Support Tools for Various Users.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['MEX', 'COL', 'PER'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>Govt LatAm: </b>Smart farming systems at the local level: Sustainability assessment and targeted data-driven recommendations for smallholder farmers.</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/mex_per_col.png" width="400px" heigth="300px"></div>\
+								<div style="text-align: center;"><h1>LatAm Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div><h3><b>Govts. of Mexico, Peru and Colombia</div>\
+								<div><h3><b>Smart farming systems at the local level: Sustainability assessment and targeted data-driven recommendations for smallholder farmers.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['ETH'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>DigitalGreen Ethiopia: </b>Co-development of agronomy and climate advisory tools for the production of high quality wheat.</p>\
-						<p><b>Fertilizer Ethiopia: </b>Co-development of landscape specific fertilizer advisory services to improve NUE, reduce cost and enhance productivity.</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/eth.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Ethiopia Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/digitalgreen.png" width="150px"><h3><b>Co-development of agronomy and climate advisory tools for the production of high quality wheat.</b></h3></div>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/ministryAgricultureETH.png" width="200px"><h3><b>Co-development of landscape specific fertilizer advisory services to improve NUE, reduce cost and enhance productivity.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['RWA'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>iSDA Rwanda: </b>Accelerating the use of digital tools for delivering agronomic advice in ...</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/rwa.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Rwanda Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div><h3><b>Accelerating the use of digital tools for delivering agronomic advice in potato-based cropping systems​.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['EGY'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>Govt. of Egypt: </b>Web/-based advisory for in-season yield potential & water productivity of irrigated wheat-based systems.</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/egy.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Egypt Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div><h3><b>Govt. of Egypt</div>\
+								<div><h3><b>Accelerating the use of digital tools for delivering agronomic advice in potato-based cropping systems​.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['IND'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>Govt. India: </b>Managing time in the rice-based cropping systems of South Asia.</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/ind.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp India Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div><h3><b>Govt. of India</div>\
+								<div><h3><b>Managing time in the rice-based cropping systems of South Asia.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['KHM'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-						<p><b>DSRC Cambodia: </b>Optimizing rice productivity, profitability and environmental sustainability using mechanized and precise direct-seeded rice.</p>\
-						<p><b>Current UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/khm.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp Cambodia Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/dsrc.png" width="150px"><h3><b>Optimizing rice productivity, profitability and environmental sustainability using mechanized and precise direct-seeded rice.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
 		}
-		else if (['COD', 'ZMB', 'MOZ', 'MWI'].includes(feature.properties['iso3'])) {
-			var ac = '<div width="300px" height="300px">\
-						<p><b>Advanced UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+		else if (['COD'].includes(feature.properties['iso3'])) {
+			var cc = '<div width="300px" height="300px">\
+								<div style=display:inline-block;vertical-align:top;><img src="img/cod.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>Democratic Republic<br>of Congo Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Use Cases in Development</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/olam.png" width="150px"><h3><b>Decision Support Tools for intensification & diversification of organic coffee and banana.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
-				sidebar.setContent(ac).show();
+				sidebar.setContent(cc).show();
+			});
+		}
+		else if (['ZMB', 'MOZ', 'MWI'].includes(feature.properties['iso3'])) {
+			var cc = '<div width="300px" height="300px">\
+								<div style=display:inline-block;vertical-align:top;><img src="img/moz_mwi_zam.png" width="400px" heigth="300px"></div>\
+								<div style="display:inline-block;"><h1>Malawi, Mozambique and Zambia Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Use Cases in Development</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/solidaridad.png" width="150px"><h3><b>Incorporating practices data as part of feedback in hyperlocal digital advisory.</b></h3></div>\
+								</div>';
+			layer.on('click', function() {
+				sidebar.setContent(cc).show();
+			});
+		}
+		else if (['KEN'].includes(feature.properties['iso3'])) {
+			var cc = '<div width="300px" height="300px">\
+								<div style=display:inline-block;vertical-align:top;><img src="img/ken.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Kenya Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Use Cases in finalization of due dilligence</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/mercy.png" width="150px"><h3><b>Decision Support Tools for Various Users.</b></h3></div>\
+								</div>';
+			layer.on('click', function() {
+				sidebar.setContent(cc).show();
+			});
+		}
+		else if (['VNM'].includes(feature.properties['iso3'])) {
+			var cc = '<div width="300px" height="300px">\
+								<div style=display:inline-block;vertical-align:top;><img src="img/vnm.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>Vietnam Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Use Cases in finalization of due dilligence</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/dsrc.png" width="150px"><h3><b>Optimization of Rice Production Via Mechanization.</b></h3></div>\
+								</div>';
+			layer.on('click', function() {
+				sidebar.setContent(cc).show();
 			});
 		}
 		else if (['MAR'].includes(feature.properties['iso3'])) {
-			var dc = '<div width="300px" height="300px">\
-						<p><b>Developing UC: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+			var cc = '<div width="300px" height="300px">\
+								<div style=display:inline-block;vertical-align:top;><img src="img/mar.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp Morocco Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Use Cases in finalization of due dilligence</h2>\
+								<div><h3><b>Govt. of Morocco</div>\
+								<div><h3><b>CA Agriculture Mechanization and Agronomy Package</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
-				sidebar.setContent(dc).show();
+				sidebar.setContent(cc).show();
 			});
 		}
 		else {};
