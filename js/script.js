@@ -197,7 +197,7 @@ function contentUC(feature,layer) {
 		else if (['VNM'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
 								<div style=display:inline-block;vertical-align:top;><img src="img/vnm.png" width="100px" heigth="100px"></div>\
-								<div style="display:inline-block;"><h1>Vietnam Use Cases</h1></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Vietnam Use Cases</h1></div>\
 								<hr size="1" width="100%" color="#a84f42">\
 								<h2>Use Cases in finalization of due dilligence</h2>\
 								<div style=display:inline-block;vertical-align:top;><img src="img/dsrc.png" width="150px"><h3><b>Optimization of Rice Production Via Mechanization.</b></h3></div>\
