@@ -55,12 +55,15 @@ function styleUC(feature) {
 function contentUC(feature,layer) {
 		if (['GHA'].includes(feature.properties['iso3'])) {
 			var cc = '<div width="300px" height="300px">\
-								<img src="img/isdaxgha.png" width="150px"><p>Testing hyperlocal digital agronomic advisory services and their delivery.</p>\
-						<p><b>Worldcover Ghana: </b>Cropping calendar advisories for smallholder maize farmers and extension agents in the Guinea savannah zone.</p>\
-						<p><b>Ghana soil fertiliser advisory: </b>CDigital Fertilizer advisory & Agronomic advice.</p>\
-						<p><b>Worldcover Ghana: </b>' + (feature.properties['lithium_production_ton'] !== null ? Autolinker.link(feature.properties['lithium_production_ton'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' tons</p>\
-						<p><b>Lithium Global Production: </b>' + (feature.properties['lithium_production_perc'] !== null ? Autolinker.link(feature.properties['lithium_production_perc'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + ' %</p>\
-						</div>';
+								<div style=display:inline-block;vertical-align:top;><img src="img/gha.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block;"><h1>&nbsp &nbsp Ghana Use Cases</h1></div>\
+								<hr size="1" width="100%" color="#a84f42">\
+								<h2>Current Use Cases</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/isdaxgha.png" width="75px"><h3><b>Testing hyperlocal digital agronomic advisory services and their delivery.</b></h3></div>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/wcxgha.png" width="150px"><h3><b>Cropping calendar advisories for smallholder maize farmers and extension agents in the Guinea savannah zone.</b></h3></div>\
+								<h2>Advanced Use Cases</h2>\
+								<div style=display:inline-block;vertical-align:top;><img src="img/esokoxgha.png" width="150px"><h3><b>Ghana soil fertiliser advisory: Digital Fertilizer advisory & Agronomic advice.</b></h3></div>\
+								</div>';
 			layer.on('click', function() {
 				sidebar.setContent(cc).show();
 			});
