@@ -160,15 +160,6 @@ function contentUC(feature,layer) {
 		else {};
 	};
 
-// var marker = L.marker([0,0]).addTo(map).on('click', function(){
-// 	sidebar.setContent('Null Island').show();
-// });
-//
-//
-// var marker2 = L.marker([40,40]).addTo(map).on('click', function(){
-// 	sidebar.setContent('Somewhere else').show();
-// });
-
 // Set data
 var uc = new L.geoJSON(json_rmis_data_0, {
 	interactive: true,
@@ -178,17 +169,3 @@ var uc = new L.geoJSON(json_rmis_data_0, {
 
 // Add data to the map
 map.addLayer(uc);
-// map.addLayer(uc).on('click', function(){
-// 	sidebar.setContent('New Use Cases').show();
-// });
-
-// var mapUC = uc.addTo(map).on('click', function(){
-// 	if (['GHA', 'NGA', 'MEX', 'ETH', 'IND', 'RWA', 'PER', 'COL', 'KHM', 'EGY'].includes(feature.properties['iso3'])) {
-// 		sidebar.setContent('Current Use Cases').show();
-// 	} else if (['COD', 'ZMB', 'MOZ', 'MWI'].includes(feature.properties['iso3'])) {
-// 		sidebar.setContent('Advaced Use Cases').show();
-// 	} else {
-// 		sidebar.setContent('Developing Use Cases').show();
-// 	};
-// 	// sidebar.setContent('Something').show();
-// });
