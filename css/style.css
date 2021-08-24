@@ -14,3 +14,17 @@ html, body, #leaflet {
   padding: 5px;
 }
 .h1 {text-align: center;}
+.icenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+}
+.tcenter {
+  text-align: center;
+  border: null;
+}
+td, th {
+  text-align: center;
+  padding: 5%;
+}
