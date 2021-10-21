@@ -28,3 +28,9 @@ td, th {
   text-align: center;
   padding: 5%;
 }
+.imgContainer{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float:left;
+}
